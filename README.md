@@ -10,10 +10,9 @@ Add this to your `.profile`
 git_push () { git status && echo && echo $* | grep [a-zA-Z] && echo "Pushing as `git config user.name` in 5 seconds (CTRL+C to decline) ..." && sleep 5 && git config --global push.default current && git add --all && git commit -m "$*" && git push ; }
 ```
 
-Use `git_push your commit message` to push to git
-
 ### Use GNU tools on Mac
 
+Not all shell scripts are suitable with Mac so it's better to use GNU shell
 
 ```
 echo 'export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"' >> ~/.profile
@@ -29,3 +28,4 @@ echo 'export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"' >> ~/.profile
 echo 'export PATH="/usr/local/opt/gnu-units/libexec/gnubin:$PATH"' >> ~/.profile
 echo 'export PATH="/usr/local/opt/gettext/bin:$PATH"' >> ~/.profile
 ```
+
