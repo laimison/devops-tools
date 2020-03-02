@@ -15,6 +15,8 @@ git_push () { git status && echo && echo $* | grep [a-zA-Z] && echo "Pushing as 
 Not all shell scripts are suitable with Mac so it's better to use GNU shell
 
 ```
+brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep ed inetutils gnu-which make gnu-units
+
 echo 'export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"' >> ~/.profile
 echo 'export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"' >> ~/.profile
 echo 'export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"' >> ~/.profile
