@@ -6,11 +6,14 @@ Add this to your `.profile`
 
 ### Commit one-liner
 
+
 ```
 git_push () { git status && echo && echo $* | grep [a-zA-Z] && echo "Pushing as `git config user.name` in 5 seconds (CTRL+C to decline) ..." && sleep 5 && git config --global push.default current && git add --all && git commit -m "$*" && git push ; }
 ```
 
+
 ### Use GNU tools on Mac
+
 
 ```
 echo 'export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"' >> ~/.profile
