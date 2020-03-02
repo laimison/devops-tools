@@ -15,7 +15,7 @@ git_push () { git status && echo && echo $* | grep [a-zA-Z] && echo "Pushing as 
 test
 
 
-### Use GNU tools
+### Commit one-liner
 
 
 
