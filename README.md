@@ -6,11 +6,20 @@ Add this to your `.profile`
 
 ### Commit one-liner
 
+test
+
 ```
 git_push () { git status && echo && echo $* | grep [a-zA-Z] && echo "Pushing as `git config user.name` in 5 seconds (CTRL+C to decline) ..." && sleep 5 && git config --global push.default current && git add --all && git commit -m "$*" && git push ; }
 ```
 
+test
+
+
 ### Use GNU tools
+
+
+
+
 
 Not all shell scripts are suitable with Mac so it's better to use GNU shell
 
