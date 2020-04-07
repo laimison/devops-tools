@@ -10,6 +10,27 @@ Add this to your `.profile`
 git_push () { git status && echo && echo $* | grep [a-zA-Z] && echo "Pushing as `git config user.name` in 5 seconds (CTRL+C to decline) ..." && sleep 5 && git config --global push.default current && git add --all && git commit -m "$*" && git push ; }
 ```
 
+### Auto-SSH
+
+There are more security measures around this, but first one is to not store password in history (notice whitespace before export SSHPASS)
+
+```
+sshp () { sshpass -e ssh -o StrictHostKeyChecking=no $1 ${@:2} ;}
+```
+
+Usage per terminal:
+
+```
+export HISTCONTROL=ignoreboth
+ export SSHPASS=pass
+```
+
+Usage:
+
+```
+sshp server
+```
+
 ### Use GNU Shell on Mac
 
 Not all shell scripts are suitable with Mac so it's better to use GNU shell
