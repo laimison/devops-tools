@@ -14,19 +14,26 @@ sshp () { sshpass -e ssh -o StrictHostKeyChecking=no $1 ${@:2} ;}
 
 # Use GNU Shell on Mac
 brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep ed inetutils gnu-which make gnu-units || true
-echo 'export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"' >> ~/.profile
-echo 'export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"' >> ~/.profile
-echo 'export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"' >> ~/.profile
-echo 'export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"' >> ~/.profile
-echo 'export PATH="/usr/local/opt/gnu-indent/libexec/gnubin:$PATH"' >> ~/.profile
-echo 'export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"' >> ~/.profile
-echo 'export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"' >> ~/.profile
-echo 'export PATH="/usr/local/opt/ed/libexec/gnubin:$PATH"' >> ~/.profile
-echo 'export PATH="/usr/local/opt/gnu-which/libexec/gnubin:$PATH"' >> ~/.profile
-echo 'export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"' >> ~/.profile
-echo 'export PATH="/usr/local/opt/gnu-units/libexec/gnubin:$PATH"' >> ~/.profile
-echo 'export PATH="/usr/local/opt/gettext/bin:$PATH"' >> ~/.profile
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-indent/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/ed/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-which/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-units/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gettext/bin:$PATH"
 
 # Better 'git pull' alternative, see https://stackoverflow.com/questions/15316601/in-what-cases-could-git-pull-be-harmful
 git config --global alias.up '!git remote update -p; git merge --ff-only @{u}'
+
+# Aliases
+alias d=docker
+alias d-c=docker-compose
+alias k=kubectl
+de() { docker exec -it $1 bash; }
+dl() { docker logs -f --tail 1000 $1; }
 ```
