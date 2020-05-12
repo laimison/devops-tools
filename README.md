@@ -1,6 +1,6 @@
 # devops-tools
 
-## .profile
+## ~/.profile
 
 ```
 # Add & commit and push in one-liner
